@@ -83,7 +83,7 @@ class DataAnalytics:
         if {"Ship Date", "Order Date"}.issubset(self.df.columns):
             self.df["Shipping Days"] = (self.df["Ship Date"] - self.df["Order Date"]).dt.days
         else:
-            print("Skipping Shipping Days feature: required columns are missing.")
+            print("Skipping Shipping Days feature:  required columns are missing.")
 
         print("New Features Created")
 
@@ -238,29 +238,18 @@ class DataAnalytics:
 
 
 
-# MAIN EXECUTION
-# if __name__ == "__main__":
-    # path = "train.csv"  # change path if needed
+# MAIN EXECUTION.
+if __name__ == "__main__":
+    path = "asset/train_with_profit_discount.csv"
 
-    # project = DataAnalytics(path)
+    Runner = DataAnalytics(path)
 
-    # project.load_data()
-    # project.explore_data()
-    # project.clean_data()
-    # project.feature_engineering()
-    # project.analysis()
-    # project.visualize()
+    Runner.load_data()
+    Runner.explore_data()
+    Runner.clean_data()
+    Runner.feature_engineering()
+    Runner.analysis()
+    Runner.visualize()
 
-path = "asset/train_with_profit_discount.csv"
-k = DataAnalytics(path)
-k.load_data()
-k.explore_data()
-# k.check_missing_postal_code_pattern()
-# k.clean_data()
 
-k.feature_engineering()
-k.analysis()
-k.visualize()
-# k.feature_engineering()
-# k.check_missing_postal_code_pattern()
 
