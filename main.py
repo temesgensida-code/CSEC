@@ -6,17 +6,20 @@ import os
 
 class DataAnalytics:
     def __init__(self, path):
+        """Initialize with the CSV path and a placeholder dataframe."""
         self.path = path
         self.df = None
 
     # 1. Load Data
     def load_data(self):
+        """Load the dataset from disk and print a quick preview."""
         self.df = pd.read_csv(self.path)
         print("Data Loaded Successfully")
         print(self.df.head(0))
 
     # 2. Basic Info
     def explore_data(self):
+        """Print basic dataset info and descriptive statistics."""
         print("\n--- DATA INFO ---")
         print(self.df.info())
         print("\n--- DESCRIBE ---")
@@ -24,6 +27,7 @@ class DataAnalytics:
 
     # 3. Data Cleaning
     def clean_data(self):
+        """Remove duplicates, handle missing values, and parse dates."""
         print("\n--- CLEANING DATA ---")
 
         # Remove duplicates
@@ -51,6 +55,7 @@ class DataAnalytics:
 
     # 4. Feature Engineering
     def feature_engineering(self):
+        """Derive additional features such as month, ratios, and durations."""
         print("\n--- FEATURE ENGINEERING ---")
 
         if self.df is None:
@@ -89,6 +94,7 @@ class DataAnalytics:
 
     # 5. Missing Postal Code Pattern Check
     def check_missing_postal_code_pattern(self):
+        """Analyze patterns for missing postal codes and return summaries."""
         print("\n--- MISSING POSTAL CODE PATTERN CHECK ---")
 
         if self.df is None:
@@ -162,6 +168,7 @@ class DataAnalytics:
 
     # 5. Advanced Analysis
     def analysis(self):
+        """Run grouped profit analysis, correlations, percentiles, and outliers."""
         print("\n--- ANALYSIS ---")
 
         # Multi-dimensional analysis
@@ -180,6 +187,7 @@ class DataAnalytics:
 
     # 6. Visualization
     def visualize(self):
+        """Generate and save charts to the visualization_images folder."""
         print("\n--- CREATING VISUALIZATIONS ---")
 
         os.makedirs("visualization_images", exist_ok=True)
