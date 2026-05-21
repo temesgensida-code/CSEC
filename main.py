@@ -246,23 +246,23 @@ class DataAnalytics:
 
 
 path = "asset/train_with_profit_discount.csv"
-obj=DataAnalytics(path)
-obj.load_data()
+# obj=DataAnalytics(path)
+# obj.load_data()
 
-obj.clean_data()
-obj.analysis()
+# obj.clean_data()
+# obj.analysis()
 # obj.explore_data()
-# # MAIN EXECUTION.
-# if __name__ == "__main__":
-#     path = "asset/train_with_profit_discount.csv"
+#MAIN EXECUTION.
+if __name__ == "__main__":
+    path = "asset/train_with_profit_discount.csv"
 
-#     Runner = DataAnalytics(path)
+    Runner = DataAnalytics(path)
 
-#     Runner.load_data()
-#     Runner.explore_data()
-#     Runner.clean_data()
-#     Runner.feature_engineering()
-#     Runner.analysis()
-#     Runner.visualize()
+    Runner.load_data()
+    Runner.explore_data()
+    Runner.clean_data()
+    Runner.feature_engineering()
+    Runner.analysis()
+    Runner.visualize()
 
 
